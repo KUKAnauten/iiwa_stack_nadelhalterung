@@ -6,7 +6,7 @@
      An automatically generated package with all the configuration and launch files for using the iiwa14_tool with the MoveIt Motion Planning Framework
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
-  <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
+  <maintainer email="lauramaria.bielenberg@stud.tu-darmstadt.de">MoveIt Setup Assistant</maintainer>
 
   <license>BSD</license>
 
