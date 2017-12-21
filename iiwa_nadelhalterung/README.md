@@ -9,9 +9,8 @@ Tool designed to use for two porposes:
 1. Registration of cubic tissuedummy
   -> TCP Frame set accordingly to the corner of the registrationtool
 
-2. Holds the Brachytherapie needle with 17 Gauge (1,4 mm Diameter)
+2. Holds the Brachytherapy needle with 17 Gauge (1,4 mm Diameter)
 
-ToDo: 
-  - interaktive Handle does not coincide with TCP yet(??)
+ToDo:
   - registratioprocess: insert cube to MoveIt and Gazebo via manually registred location
   
