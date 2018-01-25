@@ -1,8 +1,8 @@
 moveit_setup_assistant_config:
   URDF:
     package: iiwa_tool_description
-    relative_path: urdf/iiwa_tool.urdf
+    relative_path: urdf/iiwa14_nadelhalterung.urdf
   SRDF:
-    relative_path: config/iiwa7_tool.srdf
+    relative_path: config/iiwa14_nadelhalterung.srdf
   CONFIG:
     generated_timestamp: 1457651071

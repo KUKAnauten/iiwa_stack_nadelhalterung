@@ -127,7 +127,7 @@
   <!-- Tool properties -->
   <xacro:property name="tool_mass" value="0.0200" />
   <xacro:property name="tool_joint_offset" value="0.0275 0.00 0.00" />
-  <xacro:property name="tool_link_offset" value="-0.015 0.0075 0.058" /> 
+  <xacro:property name="tool_link_offset" value="0.085 0.0075 0.079" /> 
   
   <!--  Here we define a dummy joint between the tip of the iiwa14 and the base of the tool. 
   There is no offset between the two, that means the tool is attached at the robot flange. -->
