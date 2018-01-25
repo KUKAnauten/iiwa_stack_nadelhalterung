@@ -20,58 +20,138 @@
   
   <!--     <link name="world"/> -->
   
-  <link name="world">
+<material name="wood">
+    <color rgba="0.89 0.58 0.47 0.3"/>
+  </material>
+  <material name="aluminium">
+    <color rgba="0.7 0.7 0.7 0.4"/>
+  </material>
+
+  <link name="world"/>
+
+  <joint name="world_table" type="fixed">
+    <parent link="world" />
+    <child link="table" />
+  </joint>
+
+  <!-- Create table on which iiwa is standing -->
+  <link name="table">
+    <inertial>
+      <origin xyz="0.0 0.0 0.5" rpy="0 0 0"/>
+      <mass value="15"/>
+      <inertia ixx="0.05"  ixy="0"  ixz="0" iyy="0.06" iyz="0" izz="0.03" />
+    </inertial>
+
     <visual>
-      <origin xyz="0 0 0.42" rpy="0 0 0"/>
+      <origin xyz="0 0 0.70" rpy="0 0 0"/>
       <geometry>
-	<box size="0.68 0.605 0.84"/>
+        <box size="1.5 1.5 0.04"/>
       </geometry>
+      <material name="wood"/>
     </visual>
-    <collision>
-      <origin xyz="0 0 0.42" rpy="0 0 0"/>
+    <visual>
+      <origin xyz="0.66 0.66 0.34" rpy="0 0 0"/>
       <geometry>
-	<box size="0.68 0.605 0.84"/>
+        <box size="0.08 0.08 0.68"/>
       </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.66 0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <visual>
+      <origin xyz="0.66 -0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.66 -0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.70" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.5 1.5 0.04"/>
+      </geometry>
+      <material name="wood"/>
+    </collision>
+    <collision>
+      <origin xyz="0.66 0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+    <collision>
+      <origin xyz="-0.66 0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+    <collision>
+      <origin xyz="0.66 -0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+    <collision>
+      <origin xyz="-0.66 -0.66 0.34" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.68"/>
+      </geometry>
+      <material name="aluminium"/>
     </collision>
   </link>
   
-  <gazebo reference="world">
+  <gazebo reference="table">
     <static>true</static>
   </gazebo>
   
   <!-- Here we insert an iiwa14 robot in the scene, it's origin is just on top of the box previously defined. You can use 0,0,0 if you don't have that. -->
-  <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
-    <origin xyz="0 0 0.84" rpy="0 0 0"/>
+  <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="table">
+    <origin xyz="0 0 0.72" rpy="0 0 0"/>
   </xacro:iiwa14>
   
   <!-- Tool properties -->
-  <property name="tool_mass" value="0.0200" />
-  <property name="tool_joint_offset" value="0.00 0.00 0.00" />
-  <property name="tool_link_offset" value="-0.015 0.0075 0.058" /> 
+  <xacro:property name="tool_mass" value="0.0200" />
+  <xacro:property name="tool_joint_offset" value="0.0275 0.00 0.00" />
+  <xacro:property name="tool_link_offset" value="-0.015 0.0075 0.058" /> 
   
   <!--  Here we define a dummy joint between the tip of the iiwa14 and the base of the tool. 
   There is no offset between the two, that means the tool is attached at the robot flange. -->
   <joint name="tool_joint" type="fixed">
     <parent link="iiwa_link_ee" />
     <child link = "tool_link" />
-    <origin xyz="${tool_joint_offset}" rpy="0 0 0" />  
+     <origin xyz="${tool_joint_offset}" rpy="0 0 0" />  
   </joint>
   
   <!-- Here we define the geometry of the tool. We designed the tool ourselves, so we have a mesh file that represents it.   
   Else, one can define it using a geometric representation that approximate it, like a cylinder (see commented lines) -->
   <link name="tool_link">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="${tool_joint_offset}" rpy="0 0 ${3*PI/2.0}"/>
       <geometry>
-	<mesh filename="package://iiwa_nadelhalterung_description/meshes/visual/EEF_plusFlansch.stl" />
+	<mesh filename="package://iiwa_nadelhalterung_description/meshes/visual/eef.stl" />
 	<!-- 	<cylinder length="0.1275" radius="0.020"/> -->
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="${tool_joint_offset}" rpy="0 0 ${PI/2.0}"/>
       <geometry>
-	<mesh filename="package://iiwa_nadelhalterung_description/meshes/visual/EEF_plusFlansch.stl" />
+	<mesh filename="package://iiwa_nadelhalterung_description/meshes/visual/eef.stl" />
 	<!-- 	<cylinder length="0.1275" radius="0.020"/> -->
       </geometry>
       <material name="Grey"/>
