@@ -4,10 +4,9 @@
   <arg name="hardware_interface" default="PositionJointInterface"/>
   <arg name="robot_name" default="iiwa"/>
   <arg name="model" default="iiwa14"/>
-  <arg name="load_robot_description" default="true"/>
 
   <include file="$(find iiwa_nadelhalterung_moveit)/launch/planning_context.launch">
-    <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    <arg name="load_robot_description" value="true"/>
     <arg name="hardware_interface" value="$(arg hardware_interface)"/>
     <arg name="robot_name" value="$(arg robot_name)"/>
     <arg name="model" value="$(arg model)"/>
@@ -60,7 +59,7 @@
 
     <!-- MoveGroup capabilities to load -->
     <param name="capabilities" value="move_group/MoveGroupCartesianPathService
-				      move_group/MoveGroupExecuteTrajectoryAction
+				      move_group/MoveGroupExecuteService
 				      move_group/MoveGroupKinematicsService
 				      move_group/MoveGroupMoveAction
 				      move_group/MoveGroupPickPlaceAction
@@ -79,3 +78,4 @@
   </node>
 
 </launch>
+

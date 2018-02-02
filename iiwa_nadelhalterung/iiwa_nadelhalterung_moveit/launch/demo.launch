@@ -48,4 +48,10 @@
         <!-- If database loading was enabled, start mongodb as well -->
         <include file="$(find iiwa_nadelhalterung_moveit)/launch/default_warehouse_db.launch" if="$(arg db)"/>
     </group>
+    
+    
+    
+</launch>
+  </include>
+
 </launch>
