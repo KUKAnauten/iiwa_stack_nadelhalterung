@@ -7,6 +7,7 @@ Panels:
         - /MotionPlanning1
         - /MarkerArray1
         - /TF1
+        - /Range1
       Splitter Ratio: 0.742560029
     Tree Height: 175
   - Class: rviz/Help
@@ -127,10 +128,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          tool_link_nh:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           world:
             Alpha: 1
             Show Axes: false
@@ -238,10 +235,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          tool_link_nh:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           world:
             Alpha: 1
             Show Axes: false
@@ -259,180 +252,27 @@ Visualization Manager:
       Queue Size: 100
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        iiwa_link_0:
-          Value: true
-        iiwa_link_1:
-          Value: true
-        iiwa_link_2:
-          Value: true
-        iiwa_link_3:
-          Value: true
-        iiwa_link_4:
-          Value: true
-        iiwa_link_5:
-          Value: true
-        iiwa_link_6:
-          Value: true
-        iiwa_link_7:
-          Value: true
-        iiwa_link_ee:
-          Value: true
-        table:
-          Value: true
-        tool_link:
-          Value: true
-        tool_link_ee:
-          Value: true
-        tool_link_nh:
-          Value: true
-        world:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: false
+      Show Names: true
       Tree:
-        world:
-          table:
-            iiwa_link_0:
-              iiwa_link_1:
-                iiwa_link_2:
-                  iiwa_link_3:
-                    iiwa_link_4:
-                      iiwa_link_5:
-                        iiwa_link_6:
-                          iiwa_link_7:
-                            iiwa_link_ee:
-                              tool_link:
-                                {}
-                              tool_link_ee:
-                                tool_link_nh:
-                                  {}
+        {}
       Update Interval: 0
-      Value: true
-    - Class: moveit_rviz_plugin/Trajectory
-      Color Enabled: false
-      Enabled: true
-      Interrupt Display: false
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        iiwa_link_0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iiwa_link_ee:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        table:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_link_ee:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tool_link_nh:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-      Loop Animation: false
-      Name: Trajectory
-      Robot Alpha: 0.5
-      Robot Color: 150; 50; 150
-      Robot Description: robot_description
-      Show Robot Collision: false
-      Show Robot Visual: true
-      Show Trail: false
-      State Display Time: 0.05 s
-      Trail Step Size: 1
-      Trajectory Topic: /move_group/display_planned_path
-      Value: true
-    - Class: rviz/InteractiveMarkers
-      Enable Transparency: true
-      Enabled: true
-      Name: InteractiveMarkers
-      Show Axes: false
-      Show Descriptions: true
-      Show Visual Aids: false
-      Update Topic: ""
-      Value: true
-    - Alpha: 1
+      Value: false
+    - Alpha: 0.5
       Buffer Length: 1
-      Class: rviz/Path
-      Color: 25; 255; 0
+      Class: rviz/Range
+      Color: 122; 200; 133
       Enabled: true
-      Head Diameter: 0.300000012
-      Head Length: 0.200000003
-      Length: 0.300000012
-      Line Style: Lines
-      Line Width: 0.0299999993
-      Name: Path
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Pose Color: 255; 85; 255
-      Pose Style: None
-      Radius: 0.0299999993
-      Shaft Diameter: 0.100000001
-      Shaft Length: 0.100000001
-      Topic: ""
+      Name: Range
+      Queue Size: 500
+      Topic: /ultrasound
       Unreliable: false
       Value: true
   Enabled: true
@@ -450,25 +290,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 4.54565191
+      Distance: 4.23912334
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.147408903
-        Y: 1.19998586
+        X: 0.685755849
+        Y: 1.6986717
         Z: -1.49005928e-08
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.684797049
+      Pitch: 0.294797033
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.09494925
+      Yaw: 5.3199501
     Saved: ~
 Window Geometry:
   Displays:
@@ -482,10 +322,8 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000001000000000000027f0000037afc020000000afb000000100044006900730070006c006100790073010000004300000144000000e300fffffffb0000000800480065006c00700000000342000000bb0000007900fffffffb0000000a0056006900650077007300000003b0000000b0000000b300fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb0000002e004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d00200053006c00690064006500720000000000ffffffff0000004300fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000018d000001e7000001cc00fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c00730047007500690000000000ffffffff0000004300fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c0073004700750069010000037a000000430000004300fffffffb000000120020002d00200053006c00690064006500720000000000ffffffff0000004300ffffff0000049f0000037a00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000001000000000000027f0000037afc0200000009fb000000100044006900730070006c006100790073010000004300000144000000e300fffffffb0000000800480065006c00700000000342000000bb0000007900fffffffb0000000a0056006900650077007300000003b0000000b0000000b300fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb0000002e004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d00200053006c00690064006500720000000000ffffffff0000004300fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000018d000001e7000001cc00fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c00730047007500690000000000ffffffff0000004300fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c0073004700750069010000037a000000430000004300ffffff0000049f0000037a00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   RvizVisualToolsGui:
-    collapsed: false
-  Trajectory - Slider:
     collapsed: false
   Views:
     collapsed: false
