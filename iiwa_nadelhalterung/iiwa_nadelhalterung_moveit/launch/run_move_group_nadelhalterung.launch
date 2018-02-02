@@ -12,6 +12,7 @@
     <!-- the "sim" argument controls whether we connect to a Simulated or Real robot. -->
     <arg name="sim" default="true" doc="If true, the robot will be simulated in Gazebo" />
     <arg name="rviz" default="true" />
+    <arg name="load_robot_description" default="true"/>
     
     <!-- By default, we are not in debug mode -->
     <arg name="debug" default="false" />
@@ -53,6 +54,7 @@
     <group ns="$(arg robot_name)">
         <include file="$(find iiwa_nadelhalterung_moveit)/launch/move_group.launch">
             <arg name="publish_monitored_planning_scene" value="true" />
+            <arg name="load_robot_description" value="$(arg load_robot_description)"/>
             <arg name="hardware_interface" value="$(arg hardware_interface)"/>
             <arg name="robot_name" value="$(arg robot_name)"/>
             <arg name="model" value="$(arg model)" />
@@ -60,9 +62,11 @@
         
         <include if="$(arg rviz)" file="$(find iiwa_nadelhalterung_moveit)/launch/moveit_rviz.launch">
             <arg name="config" value="true"/>
+            <arg name="debug" value="$(arg debug)"/>
         </include>
-    </group>
     
-    <include file="$(find iiwa_nadelhalterung_moveit)/launch/default_warehouse_db.launch" />
+    	<include file="$(find iiwa_nadelhalterung_moveit)/launch/default_warehouse_db.launch" />
+    	
+    </group>
   
 </launch> 
