@@ -6,8 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /MarkerArray1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.742560029
-    Tree Height: 420
+    Tree Height: 197
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -244,12 +246,84 @@ Visualization Manager:
       Marker Topic: /rviz_visual_tools
       Name: MarkerArray
       Namespaces:
-        {}
+        Cylinder: true
+        Sphere: true
+        Text: true
       Queue Size: 100
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        dummy_frame:
+          Value: false
+        iiwa_link_0:
+          Value: false
+        iiwa_link_1:
+          Value: false
+        iiwa_link_2:
+          Value: false
+        iiwa_link_3:
+          Value: false
+        iiwa_link_4:
+          Value: false
+        iiwa_link_5:
+          Value: false
+        iiwa_link_6:
+          Value: false
+        iiwa_link_7:
+          Value: false
+        iiwa_link_ee:
+          Value: false
+        table:
+          Value: false
+        target_frame_1:
+          Value: true
+        target_frame_2:
+          Value: false
+        target_frame_3:
+          Value: false
+        tool_link:
+          Value: false
+        tool_link_ee:
+          Value: true
+        world:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: false
+      Tree:
+        world:
+          dummy_frame:
+            target_frame_1:
+              {}
+            target_frame_2:
+              {}
+            target_frame_3:
+              {}
+          table:
+            iiwa_link_0:
+              iiwa_link_1:
+                iiwa_link_2:
+                  iiwa_link_3:
+                    iiwa_link_4:
+                      iiwa_link_5:
+                        iiwa_link_6:
+                          iiwa_link_7:
+                            iiwa_link_ee:
+                              tool_link:
+                                {}
+                              tool_link_ee:
+                                {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
+    Default Light: true
     Fixed Frame: world
     Frame Rate: 30
   Name: root
@@ -262,30 +336,30 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 5.7446723
+      Distance: 2.8195653
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.113567002
-        Y: 0.105920002
+        X: 0.318772495
+        Y: 0.268818319
         Z: 2.23518001e-07
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.899796486
+      Pitch: 0.379796982
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 0.501762509
+      Yaw: 4.8348732
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1714
+  Height: 1021
   Help:
     collapsed: false
   Hide Left Dock: false
@@ -294,11 +368,11 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000004350000062bfc0200000008fb000000100044006900730070006c006100790073010000005d00000254000000f200fffffffb0000000800480065006c00700000000342000000bb0000008a00fffffffb0000000a0056006900650077007300000003b0000000b0000000d800fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb0000002e004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d00200053006c00690064006500720000000000ffffffff0000006600fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000002bb0000035d000002b100fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c00730047007500690100000622000000660000006600ffffff000007010000062b00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000004350000039cfc0200000008fb000000100044006900730070006c00610079007301000000430000015a000000e300fffffffb0000000800480065006c00700000000342000000bb0000007900fffffffb0000000a0056006900650077007300000003b0000000b0000000b300fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb0000002e004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d00200053006c00690064006500720000000000ffffffff0000004300fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001a3000001f3000001cc00fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c0073004700750069010000039c000000430000004300ffffff000003450000039c00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   RvizVisualToolsGui:
     collapsed: false
   Views:
     collapsed: false
-  Width: 2880
+  Width: 1920
   X: 0
-  Y: 48
+  Y: 0

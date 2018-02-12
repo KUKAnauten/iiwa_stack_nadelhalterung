@@ -164,7 +164,7 @@
    <joint name="tool_tip_ee_joint" type="fixed">
     <parent link="iiwa_link_ee" />
     <child link = "tool_link_ee" />
-    <origin xyz="${tool_link_ee_offset}" rpy="0 ${-PI/2} ${PI/2}" />   
+    <origin xyz="${tool_link_ee_offset}" rpy="${-PI/2} ${-PI/2} 0" />   
   </joint>
 
   <!--<joint name="tool_tip_nh_joint" type="fixed">

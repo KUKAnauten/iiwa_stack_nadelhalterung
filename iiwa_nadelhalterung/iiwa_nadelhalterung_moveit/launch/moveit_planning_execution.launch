@@ -40,13 +40,16 @@
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>
-        
+
         <!-- Robot interface -->
         <include file="$(find iiwa_hw)/launch/iiwa_hw.launch" >
             <arg name="hardware_interface" value="$(arg hardware_interface)" />
         </include>
         
     </group>
+
+     <!-- Load toolbar -->
+        <include file="$(find iiwa_registration)/launch/toolbar.launch"/>
     
     <!-- Load move_group -->
     <group ns="$(arg robot_name)">
